@@ -18,6 +18,14 @@
   <%= f.label :starts_at %><br/>
   <%= f.datetime_select :starts_at, {ampm: true}, {class: "datetime"} %>
   <br/><br/>
+
+  <%= f.label :image_file_name %><br/>
+  <%= f.text_field :image_file_name %>
+  <br/><br/>
+
+  <%= f.label :capacity %><br/>
+  <%= f.number_field :capacity %>
+  <br/><br/>
   
   <%= f.submit %>
 <% end %>

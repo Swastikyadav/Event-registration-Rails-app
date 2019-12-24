@@ -1,16 +1,23 @@
 <ul>
   <% @events.each do |event| %>
-    <li>
-      <strong><%= link_to event.name, event_path(event) %></strong>,
-      <%= event.location %>:
-      <%= price(event) %>
-    </li>
-    <p>
-      <%= truncate(event.description, length: 35, seperator: " ") %>
-    </p>
-    <p>
-      <%= date_and_time(event) %>
-    </p>
+    <div class="flex">
+      <div>
+        <%= image_tag(event.image_file_name, class: "image") %>
+      </div>
+      <div>
+        <li>
+          <strong><%= link_to event.name, event_path(event) %></strong>,
+          <%= event.location %>:
+          <%= price(event) %>
+        </li>
+        <p>
+          <%= truncate(event.description, length: 35, seperator: " ") %>
+        </p>
+        <p>
+          <%= date_and_time(event) %>
+        </p>
+      </div>
+    </div>
   <% end %>
 </ul>
 

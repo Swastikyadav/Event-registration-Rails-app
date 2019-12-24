@@ -18,6 +18,21 @@ class EventsController < ApplicationController
     redirect_to event_path(@event) # We can also just give @event to redirect
   end
 
+  def new
+    @event = Event.new
+  end
+
+  def create
+    @event = Event.create(event_params)
+    redirect_to event_path(@event)
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to root_path
+  end
+
   private
 
     def event_params

@@ -1,0 +1,20 @@
+<h1>Editing <%= @event.name %></h1>
+
+<%= form_with(model: @event, local: true) do |f| %>
+  <%= f.label :name %><br/>
+  <%= f.text_field :name %>
+  <br/><br/>
+  <%= f.label :description %><br/>
+  <%= f.text_area :description, rows: 5 %>
+  <br/><br/>
+  <%= f.label :location %><br/>
+  <%= f.text_field :location %>
+  <br/><br/>
+  <%= f.label :price %><br/>
+  <%= f.number_field :price %>
+  <br/><br/>
+  <%= f.label :starts_at %><br/>
+  <%= f.datetime_select :starts_at, {ampm: true}, {class: "datetime"} %>
+  <br/><br/>
+  <%= f.submit %>
+<% end %>

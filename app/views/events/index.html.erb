@@ -1,7 +1,7 @@
 <ul>
   <% @events.each do |event| %>
     <li>
-      <strong><%= event.name %></strong>,
+      <strong><%= link_to event.name, event_path(event) %></strong>,
       <%= event.location %>:
       <%= price(event) %>
     </li>

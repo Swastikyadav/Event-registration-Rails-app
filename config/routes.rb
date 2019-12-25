@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   # All the above routes can be achieved with just one line of code.
 
-  resources :events
+  resources :events do
+    resources :registrations    
+  end
 
 end

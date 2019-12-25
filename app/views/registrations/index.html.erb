@@ -1,0 +1,10 @@
+<h1>Registrations for <%= link_to @event.name, event_path(@event) %></h1>
+<ul>
+  <% @registrations.each do |reg| %>
+    <li>
+      <%= reg.name %><br/>
+      <%= reg.email %><br/>
+      <%= reg.how_heard %>
+    </li>
+  <% end %>
+</ul>

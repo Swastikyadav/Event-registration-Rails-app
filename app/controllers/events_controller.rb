@@ -14,8 +14,11 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    @event.update(event_params)
-    redirect_to event_path(@event) # We can also just give @event to redirect
+    if @event.update(event_params)
+      redirect_to event_path(@event) # We can also just give @event to redirect
+    else
+      render :edit
+    end
   end
 
   def new
@@ -23,8 +26,12 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.create(event_params)
-    redirect_to event_path(@event)
+    @event = Event.new(event_params)
+    if @event.save
+      redirect_to event_path(@event)
+    else
+      render :new
+    end  
   end
 
   def destroy

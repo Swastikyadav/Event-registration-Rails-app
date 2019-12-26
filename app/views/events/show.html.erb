@@ -4,7 +4,8 @@
 <h3><%= date_and_time(@event) %> in <%= @event.location %></h3>
 <p><%= @event.description %></p>
 
-<%= link_to "View Registrations", event_registrations_path(@event) %><br/><br/>
+<p><%= spot_status(@event) %></p>
+<p><%= link_to "View Registrations", event_registrations_path(@event) %></p><br/>
 
 <section>
   <%= link_to "Edit", edit_event_path(@event), class: "button" %>

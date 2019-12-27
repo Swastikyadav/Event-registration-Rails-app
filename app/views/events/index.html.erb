@@ -21,4 +21,6 @@
   <% end %>
 </ul>
 
-<%= link_to "Add New Event", new_event_path, class: "button" %>
+<% if current_user_admin? %>
+  <%= link_to "Add New Event", new_event_path, class: "button" %>
+<% end %>

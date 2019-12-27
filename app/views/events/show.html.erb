@@ -7,7 +7,9 @@
 <p><%= spot_status(@event) %></p>
 <p><%= link_to "View Registrations", event_registrations_path(@event) %></p><br/>
 
-<section>
-  <%= link_to "Edit", edit_event_path(@event), class: "button" %>
-  <%= link_to "Delete", event_path(@event), method: :delete, class: "button" %>
-</section>
+<% if current_user_admin? %>
+  <section>
+    <%= link_to "Edit", edit_event_path(@event), class: "button" %>
+    <%= link_to "Delete", event_path(@event), method: :delete, class: "button" %>
+  </section>
+<% end %>

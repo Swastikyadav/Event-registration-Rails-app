@@ -2,15 +2,7 @@
 
 <%= form_with(model: [@event, @registration], local: true) do |f| %>
   <%= render "shared/errors", object: @registration %>
-
-  <%= f.label :name %><br/>
-  <%= f.text_field :name, autofocus: true %>
-  <br/><br/>
-
-  <%= f.label :email %><br/>
-  <%= f.email_field :email %>
-  <br/><br/>
-
+  
   <%= f.label :how_heard %><br/>
   <%= f.select :how_heard, Registration::HOW_HEARD_OPTIONS, prompt: "Pick One" %>
   <br/><br/>

@@ -2,8 +2,8 @@
 <ul>
   <% @registrations.each do |reg| %>
     <li>
-      <%= reg.name %><br/>
-      <%= reg.email %><br/>
+      <%= reg.user.name %><br/>
+      <%= reg.user.email %><br/>
       <%= reg.how_heard %>
     </li>
   <% end %>

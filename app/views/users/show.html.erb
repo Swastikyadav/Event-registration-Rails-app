@@ -5,4 +5,11 @@
     <p><%= link_to "Edit Profile", edit_user_path(@user) %><p>
     <p><%= link_to "Delete Profile", user_path(@user), method: :delete, data: { confirm: "Are you sure?" } %><p>
   <% end %>
+
+  <% @registrations.each do |r| %>
+    <div>
+      <%= link_to image_tag(r.event.image_file_name), r.event, class: "image" %>
+    </div>
+    <%= link_to r.event.name, r.event %>
+  <% end %>
 </section>

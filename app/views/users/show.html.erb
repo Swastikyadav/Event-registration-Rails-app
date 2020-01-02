@@ -13,3 +13,14 @@
     <%= link_to r.event.name, r.event %>
   <% end %>
 </section>
+
+<% if @liked_events.present? %>
+  <h4>Liked Events</h4>
+  <ul>
+    <% @liked_events.each do |event| %>
+      <li>
+        <%= link_to image_tag(event.image_file_name), event %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

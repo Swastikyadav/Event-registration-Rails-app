@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :likes
   root "events#index"
 
   # get "events/new" => "events#new", as: "new_event"
@@ -14,7 +13,8 @@ Rails.application.routes.draw do
   # All the above routes can be achieved with just one line of code.
 
   resources :events do
-    resources :registrations    
+    resources :registrations 
+    resources :likes
   end
 
   resource :session, only: [:new, :create, :destroy]

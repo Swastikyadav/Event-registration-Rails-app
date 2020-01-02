@@ -1,4 +1,15 @@
 <%= image_tag(@event.image_file_name, class: "image") %>
+<% if current_user %>
+  <div class="likes">
+    <% if @like %>
+      <%= button_to "* Unlike", event_like_path(@event, @like), method: :delete %>
+      <%= @likers.size %>
+    <% else %>
+      <%= button_to "* Like", event_likes_path(@event) %>
+      <%= @likers.size %>
+    <% end %>
+  </div>
+<% end %>
 <h1><%= @event.name %></h1>
 <h2><%= pluralize(@event.capacity, "spot") %> &bull; <%= price(@event) %></h2>
 <h3><%= date_and_time(@event) %> in <%= @event.location %></h3>
